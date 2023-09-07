@@ -28,8 +28,6 @@ statSensor boolean not null,
 nomeSensor varchar(30) not null,
 tipoSensor varchar(20),
 constraint chkTipoSensor check (tipoSensor IN ('Umidade','Temperatura')),
-regiaoSensor varchar(20),
-constraint chkRegiaoSensor check (regiaoSensor IN ('Colheita','Incubação','Indução'))
 );
 
 create table registros(
