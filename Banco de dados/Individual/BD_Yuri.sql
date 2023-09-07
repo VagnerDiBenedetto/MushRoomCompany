@@ -7,55 +7,53 @@ idUsuario int primary key auto_increment,
 tipoUser varchar(20),
 constraint chkTipoUser check (tipoUser IN ('ADM','Normal','SuperADM')),
 nomeUser varchar(50) not null,
-cpf varchar(40) unique not null,
+email varchar(40) not null,
 senha varchar(20) not null
 );
 
 create table cogumelo(
 idCogumelo int primary key auto_increment,
 nomeEspecie varchar(50) not null,
-tempMax INT not null,
-tempMin INT not null,
-umiMax INT not null,
-umiMin INT not null
+tempColheita INT not null,
+tempIncubadora INT not null,
+tempInducao INT not null,
+umiColheita INT not null,
+umiIncubadora INT not null,
+umiInducao INT not null
 );
 
 create table sensor(
 idSensor int primary key auto_increment, 
 statSensor boolean not null,
-nomeSensor varchar(30) not null
+nomeSensor varchar(30) not null,
+tipoSensor varchar(20),
+constraint chkTipoSensor check (tipoSensor IN ('Umidade','Temperatura')),
 );
 
 create table registros(
 idRegistro int primary key auto_increment,
-dataHora datetime default current_timestamp, 
-idSensor int, -- Chave Estrangeira
-dadoSensorTemp int not null,
-dadoSensorUmi int not null
+dataHora timestamp not null default current_timestamp, 
+idSensor int,
+dadoSensor int not null
 );
 
-insert into registros(idSensor,dadoSensorTemp, dadoSensorUmi) VALUES
-	( 1, 20, 36),
-    ( 2, 12, 34),
-    ( 3, 70, 30);
+insert into registros(idSensor,dadoSensor) VALUES
+	( 1, 20),
+    ( 2, 12),
+    ( 3, 70);
 
-insert into sensor(statSensor,nomeSensor) VALUES
-	( 0, 'Sensor1'),
-    ( 1, 'Sensor2'),
-    ( 1, 'Sensor3');
+insert into sensor(statSensor,nomeSensor,tipoSensor,regiaoSensor) VALUES
+	( 0, 'Sensor1', 'Umidade', 'Colheita' ),
+    ( 1, 'Sensor2', 'Temperatura', 'Incubação' ),
+    ( 1, 'Sensor3', 'Umidade', 'Indução' );
     
-insert into cogumelo(nomeEspecie,tempMax,tempMin,umiMax,umiMin) VALUES
-    ('Shimeji','30','25','90','80'),
-	('Shitake','25','20','95','75'),
-	('Champignon','25','12','90','80');
+insert into cogumelo(nomeEspecie,tempColheita,tempIncubadora,tempInducao,umiColheita,umiIncubadora,umiInducao) VALUES
+	('Shimeji', 18, 20, 17, 60, 80, 70 ),
+    ('Shitake', 16, 15, 14, 50, 60, 90 ),
+    ('Cogumelo do Sol', 25, 20, 22, 40, 50, 70 );
     
-insert into usuarios(tipoUser,nomeUser,cpf,senha) VALUES
-	('ADM', 'Paulo', '453.545.030-78', '*****'),
-    ('SuperADM', 'Carlos', '046.736.000-61', '**************'),
-    ('Normal', 'João', '673.865.700-58', '*********');
-    
-select * from cogumelo;
-select * from sensor;
-select * from usuarios;
-select * from registros;
+insert into usuarios(tipoUser,nomeUser,email,senha) VALUES
+	('ADM', 'Paulo', 'paulo.ramalho@terraviva.com', '*****'),
+    ('SuperADM', 'Carlos', 'carlos.pinto@terraviva.com', '**************'),
+    ('Normal', 'João', 'joão.vieira@terraviva.com', '*********');
     
