@@ -19,7 +19,7 @@
     <p>Quantidade Kg que será vendida:</p>
     <input type="number" min="0" id="input_kg">
     
-    <button onclick="calcular()">Lucro total</button> 
+    <button onclick="calcular()"><b>Lucro total</b></button> 
     <div id="div_exibir"></div>
 
 </body>
@@ -32,6 +32,7 @@
         var investimento = Number(input_investimento.value);
         var kg = Number(input_kg.value);
         var venda = Number(input_venda.value);
+        
         if(investimento > 0){
             var total1 = kg * venda - investimento;
             var total2 = kg * venda;
@@ -43,18 +44,14 @@
         
         if(investimento > total2){
          div_exibir.innerHTML +=`<br><h4 style="color: red">Aumente o valor do kilo</h4>`}
-         if(investimento <=0){
+        
+        if(investimento <=0){
             div_exibir.innerHTML=`<b style="color: red">Insira um valor maior que zero no valor investido</b>`;} 
+       
         if(kg <= 0){
-            div_exibir.innerHTML+=`<br><br><b style="color: red">Insira um valor maior que zero no valor do Kg</b>`;;}
+            div_exibir.innerHTML+=`<br><br><b style="color: red">Insira um valor maior que zero no valor do Kg</b>`;}
        
         if(venda <=0){
-            div_exibir.innerHTML+=`<br><br><b style="color: red">Insira um valor maior que zero na quantidade vendida</b>`;;}
-        
-
-
-
-
-
+            div_exibir.innerHTML+=`<br><br><b style="color: red">Insira um valor maior que zero na quantidade vendida</b>`;}
     }
 </script>
