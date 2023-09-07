@@ -18,7 +18,8 @@ nome VARCHAR(30),
 funcao VARCHAR(15),
 temperaturaIdeal CHAR(2),
 intervaloHorario VARCHAR(5),
-statsIdeal VARCHAR(15));
+statsIdeal VARCHAR(15),
+usoSensor VARCHAR(20));
 
 CREATE TABLE cogumelos(
 idCogumelo INT PRIMARY KEY AUTO_INCREMENT,
@@ -27,5 +28,4 @@ qtdBloco VARCHAR(4),
 peso VARCHAR(3),
 tempIdeal CHAR(2),
 umidadeIdeal CHAR(2),
-luminosidadeIdeal VARCHAR(5),
-usoSensor VARCHAR(20));
+luminosidadeIdeal VARCHAR(5));
