@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styleCalculadora.css" />
+    <title>Calculadora Financeira</title>
+  </head>
+  <body>
+    Quantos kilos são produzidos anualmente?<input type="text" />
+    Qual o custo anual com mão de obra?<input id="ipt_MO" />
+    Qual o custo anual com insumos?<input id="ipt_IN" />
+    <button onclick="calcular()">Calcular</button>
+    
+    <table id="table_dados"></table>
+    
+  </body>
+  <script>
+    function calcular(){
+      var CT = CF+CV;
+      var CV = IN+RM;
+      
+      var CF = D+J+A+S+MO;
+      var D = ((Vi - Vs)/Vu) * Hua;
+      var Vi = Number(29000);
+      var Vs = Vi * 0.60;
+      var Vu = 10;
+      var Hua = 624.960;
+      var MO = Number(ipt_MO.value);
+      var IN = Number(ipt_IN.value);
+
+
+      table_dados.innerHTML = 
+      `      
+      <colgroup>
+        <col id="col_RB" />
+        <col id="col_COE" />
+        <col id="col_COT" />
+        <col id="col_VDA" />
+        <col id="col_MB" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <th/>
+          <th>Receita Bruta</th>
+          <th>Custo Operacional Efetivo</th>
+          <th>Custo Operacional Total</th>
+          <th>Custo de Depreciação</th>
+          <th>Margem Bruta</th>
+        </tr>
+        <tr>
+          <th>COM a Mush room.co</th>
+          <td>Calcutta</td>
+          <td>Orange</td>
+        </tr>
+        <tr>
+          <th>SEM a Mush room.co</th>
+          <td>Robots</td>
+          <td>Jazz</td>
+        </tr>
+      <tbody/>
+      `;
+    };
+  </script>
+</html>
