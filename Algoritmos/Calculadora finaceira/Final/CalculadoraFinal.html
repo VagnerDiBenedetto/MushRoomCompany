@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <link rel="stylesheet" href="styleCalculadoraFinal.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MushRoom</title>
+</head>
+<body>
+    
+    <h1>Calculadora Financeira</h1><br>
+    <br>
+    Produção atual em kg: <input type="text" id="inputProducao"><br> 
+    Valor cobrado por kg: <input type="text" id="inputValor"><br>
+    Gastos com a prudução: <input type="text" id="inputGastos"><br>
+    <button onclick="calcular()">Calcular</button><br>
+    <br>
+    <div id="divMensagem"></div><br>
+    <table id="tableDados"></table>
+   
+
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+
+        var produçãoInicial = Number(inputProducao.value)
+        var valorKg = Number(inputValor.value)
+        var gastos = Number(inputGastos.value)
+        var produçãoFinal = produçãoInicial * 1.57 
+        var valorInicial = produçãoInicial *valorKg
+        var valorFinal = produçãoFinal * valorKg
+       
+
+        divMensagem.innerHTML = `A sua produção irá aumentar em 57% um aumento de ${produçãoFinal - produçãoInicial} cogumelos que reprensentam R$${valorFinal - valorInicial}<br>
+        O lucro antes da implantação era de R$${valorInicial - gastos} e agora será de R$${valorFinal - gastos}.`
+
+        tableDados.innerHTML  = `      
+    
+      <tbody>
+        <tr>
+          <th/>
+          <th>Receita Bruta</th>
+          <th>Gastos</th>
+          <th>Lucro liquido</th>
+        </tr>
+        <tr>
+          <th>COM a Mush room.co</th>
+          <td>${valorFinal}</td>
+          <td>${gastos}</td>
+          <td>${valorFinal - gastos}</td>
+        </tr>
+        <tr>
+          <th>SEM a Mush room.co</th>
+          <td>${valorInicial}</td>
+          <td>${gastos}</td>
+          <td>${valorInicial - gastos}</td>
+        </tr>
+        <tr>
+          <th>Diferença</th>
+          <td>${valorFinal - valorInicial}</td>
+          <td></td>
+          <td>${(valorFinal - gastos) - (valorInicial - gastos)}</td>
+        </tr>
+      <tbody/>
+      `;
+    }
+</script>
