@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <link rel="stylesheet" href="styleCalculadoraFinal.css" />
+    <link rel="stylesheet" href="styleCalculadoraFuçando.css
+    " />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +19,6 @@
     <div id="divMensagem"></div><br>
     <table id="tableDados"></table>
    
-
 </body>
 </html>
 
@@ -26,45 +26,51 @@
 
     function calcular() {
 
-        var produçãoInicial = Number(inputProducao.value)
-        var valorKg = Number(inputValor.value)
-        var gastos = Number(inputGastos.value)
-        var produçãoFinal = produçãoInicial * 1.57 
-        var valorInicial = produçãoInicial *valorKg
-        var valorFinal = produçãoFinal * valorKg
-       
+      var produçãoInicial = Number(inputProducao.value)
+      var valorKg = Number(inputValor.value)
+      var gastos = Number(inputGastos.value)
+      var produçãoFinal = produçãoInicial * 1.57 
+      var valorInicial = produçãoInicial *valorKg        
+      var valorFinal = produçãoFinal * valorKg
+      
+      
+      // Mensagem com informações de implementação 
+      
+      divMensagem.innerHTML = `A sua produção irá aumentar em 57% um aumento de ${produçãoFinal - produçãoInicial} cogumelos que reprensentam R$${valorFinal - valorInicial}<br>
+      O lucro antes da implantação era de R$${valorInicial - gastos} e agora será de R$${valorFinal - gastos}.<br>`;
 
-        divMensagem.innerHTML = `A sua produção irá aumentar em 57% um aumento de ${produçãoFinal - produçãoInicial} cogumelos que reprensentam R$${valorFinal - valorInicial}<br>
-        O lucro antes da implantação era de R$${valorInicial - gastos} e agora será de R$${valorFinal - gastos}.`
 
-        tableDados.innerHTML  = `      
-    
-      <tbody>
-        <tr>
-          <th/>
-          <th>Receita Bruta</th>
-          <th>Gastos</th>
-          <th>Lucro liquido</th>
-        </tr>
-        <tr>
-          <th>COM a Mush room.co</th>
-          <td>${valorFinal}</td>
-          <td>${gastos}</td>
-          <td>${valorFinal - gastos}</td>
-        </tr>
-        <tr>
-          <th>SEM a Mush room.co</th>
-          <td>${valorInicial}</td>
-          <td>${gastos}</td>
-          <td>${valorInicial - gastos}</td>
-        </tr>
-        <tr>
-          <th>Diferença</th>
-          <td>${valorFinal - valorInicial}</td>
-          <td></td>
-          <td>${(valorFinal - gastos) - (valorInicial - gastos)}</td>
-        </tr>
-      <tbody/>
-      `;
+
+
+      // Verificando valores 
+
+      if (produçãoInicial < 0) {
+
+        divMensagem.innerHTML = "<h2>A produção atual não pode ser negativa!</h2>";
+        tableDados.innerHTML ='';
+
+      }else {
+        if (valorKg < 0) {
+
+          divMensagem.innerHTML = "<h2>O valor  por Kg não pode ser negativo!</h2>";
+          tableDados.innerHTML ='';
+
+        }else{
+          if (gastos > valorInicial) {
+
+            divMensagem.innerHTML += "<b>Voce está tendo prejuizo atualmente!</b>";
+
+            if (gastos < valorFinal) {
+
+              divMensagem.innerHTML += "<br><b>A implantação do sistema te ajudará a contornar esse prejuizo!</b>";
+
+            }else {
+
+              divMensagem.innerHTML += "<br><b>Infelizmente a sua produção não dará lucro!</b>";
+              
+            }
+          }
+        }
+      }
     }
 </script>
