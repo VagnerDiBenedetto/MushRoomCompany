@@ -40,6 +40,12 @@
                 Na produção de ${cogumelo}, com um investimento de R$ ${investimento}, você irá colher 57% kilos de cogumelo a mais, e o lucro da empresa será de R$ ${comSolucao}.
         `
 
+        if (faturamento < investimento){
+            div_mensagem.innerHTML += `<br><br>
+            <b style='color: red'>Se o investimento for maior que o faturamento, a empresa dará prejuízo. Aumente o preço de venda ou reduza o custo por kilo!</b> <br>
+            <b>A MUSHROOM COMPANY irá auxiliá-lo! Entre em contato conosco!</b>!`
+        }
+
 
 
 }
