@@ -29,7 +29,8 @@ nomeSensor varchar(30) not null
 create table registros(
 idRegistro int primary key auto_increment,
 dataHora datetime default current_timestamp, 
-idSensor int, -- Chave Estrangeira
+idSensor int, -- Chave estrangeira
+idCogumelo int, -- Chave estrangeira
 dadoSensorTemp int not null,
 dadoSensorUmi int not null
 );
