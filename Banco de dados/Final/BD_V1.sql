@@ -5,9 +5,9 @@ use mush_room;
 create table empresa(
 idEmpresa int primary key auto_increment,
 nome varchar (20) not null,
-cnpj char (14) not null unique,
-email varchar (25) not null,
-telefone char (11) not null
+cnpj char (18) not null unique,
+email varchar (30) not null,
+celular varchar (17) not null
 );
 
 create table usuarios(
@@ -15,7 +15,7 @@ idUsuario int primary key auto_increment,
 tipoUser varchar(20),
 constraint chkTipoUser check (tipoUser IN ('ADM','Normal','SuperADM')),
 nomeUser varchar(50) not null,
-cpf varchar(40) unique not null,
+cpf char(14) unique not null,
 senha varchar(20) not null
 );
 
@@ -63,8 +63,14 @@ insert into usuarios(tipoUser,nomeUser,cpf,senha) VALUES
     ('SuperADM', 'Carlos', '046.736.000-61', '**************'),
     ('Normal', 'João', '673.865.700-58', '*********');
     
+insert into empresa(nome,cnpj,email,celular) VALUES 
+	('Vendetta Cogu','15.634.778/0001-02','vendetta.cogu@gmail.com','(31) 93529-8167'),
+    ('Delicias Cogumelos','37.134.751/0001-00','cogu.delicias@gmail.com','(95) 92641-6617'),
+    ('Cogumelos Domingues','75.860.814/0001-03','domi.cogumelos@outlook.com','(82) 92384-9974');
+
 select * from cogumelo;
 select * from sensor;
 select * from usuarios;
 select * from registros;
+select * from empresa;
     
