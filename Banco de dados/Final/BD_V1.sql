@@ -2,6 +2,14 @@ create database Mush_Room;
 
 use mush_room;
 
+create table empresa(
+idEmpresa int primary key auto_increment,
+nome varchar (20) not null,
+cnpj char (14) not null unique,
+email varchar (25) not null,
+telefone char (11) not null
+);
+
 create table usuarios(
 idUsuario int primary key auto_increment,
 tipoUser varchar(20),
