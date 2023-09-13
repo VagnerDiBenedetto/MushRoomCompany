@@ -27,9 +27,10 @@
     <body>
         <h1>
          
-            <center> <p>Calculadora Financeira</center>
+            
              
             <div class="flex-container">
+                <div><b> Calculadora Financeira<br></b></div>
                 <div><b> Produção atual em kg: <input type="text" id="inputProducao"><br></b></div>
                 <div><b> Valor cobrado por kg: <input type="text" id="inputValor"><br></b></div>
                 <div><b> Gastos com a prudução: <input type="text" id="inputGastos"><br></b></div>
