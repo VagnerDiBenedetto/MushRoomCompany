@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <link rel="stylesheet" href="styleCalculadoraFuçando.css
+    <link rel="stylesheet" href="CalculadoraFinal.css
     " />
 <head>
     <meta charset="UTF-8">
@@ -11,10 +11,14 @@
     
     <h1>Calculadora Financeira</h1><br>
     <br>
-    Produção atual em kg: <input type="text" id="inputProducao"><br> 
-    Valor cobrado por kg: <input type="text" id="inputValor"><br>
-    Gastos com a prudução: <input type="text" id="inputGastos"><br>
-    <button onclick="calcular()">Calcular</button><br>
+    <spam class="perguntas">Produção atual em kg:</spam> <input type="text" id="inputProducao"><br> 
+    <br>
+    <spam class="perguntas">Valor cobrado por kg:</spam> <input type="text" id="inputValor"><br>
+    <br>
+    <spam class="perguntas">Gastos com a produção:</spam> <input type="text" id="inputGastos"><br>
+    <br>
+    <br>
+    <button onclick="calcular()"><b>Calcular</b></button><br>
     <br>
     <div id="divMensagem"></div><br>
     <table id="tableDados"></table>
@@ -36,8 +40,8 @@
       
       // Mensagem com informações de implementação 
       
-      divMensagem.innerHTML = `A sua produção irá aumentar em 57% um aumento de ${produçãoFinal - produçãoInicial} cogumelos que reprensentam R$${valorFinal - valorInicial}<br>
-      O lucro antes da implantação era de R$${valorInicial - gastos} e agora será de R$${valorFinal - gastos}.<br>`;
+      divMensagem.innerHTML = `A sua produção irá aumentar em 57% um aumento de ${produçãoFinal - produçãoInicial} cogumelos que reprensentam R$${valorFinal - valorInicial}.<br>
+      O lucro bruto antes da implantação era de R$${valorInicial - gastos} e agora será de R$${valorFinal - gastos}.<br>`;
 
 
 
