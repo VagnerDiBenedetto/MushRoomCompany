@@ -54,50 +54,31 @@
 
     // // Verificando valores 
 
-    // if (produçãoInicial < 0) {
-
-    //   divMensagem.innerHTML = "<h2>A produção atual não pode ser negativa!</h2>";
-    // }else {
-    //   if (valorKg < 0) {
-    //     divMensagem.innerHTML = "<h2>O valor  por Kg não pode ser negativo!</h2>";
-    //   }else{
-    //     if (gastos > valorInicial) {
-
-    //       divMensagem.innerHTML += "<b>Voce está tendo prejuizo atualmente!</b>";
-
-    //       if (gastos < valorFinal) {
-
-    //         divMensagem.innerHTML += "<br><b>A implantação do sistema te ajudará a contornar esse prejuizo!</b>";
-
-    //       }else {
-
-    //         divMensagem.innerHTML += "<br><b>Infelizmente a sua produção não dará lucro!</b>";
-            
-    //       }
-    //     }
-    //   }
-    // }
+    if (substrato < 0 ) divMensagem.innerHTML += `<br><b style="background-color: red; color: white">Não é possível investir valores negativos!</b>`;
 
     if(tipo == "Shiitake"){
       valorFinal = shiitake*valor;
       valorFinalCO = shiitakeCO*valor;
       divMensagem.innerHTML = `Com o investimento inicial de R$${substrato.toFixed(2)}, equivalente a ${substratoShitake.toFixed(2)}Kg de substrato sua produção atual é de ${shiitake.toFixed(2)}Kg dando um total de R$${valorFinal.toFixed(2)} Tendo um lucro bruto de <span id="pRuim">R$${(valorFinal - substrato).toFixed(2)}<span/>.<br>`;
       divMensagem.innerHTML += `Com a <b>MushRoom.co</b> fazendo o mesmo investimento sua produção passa a ser de ${shiitakeCO.toFixed(2)}Kg dando um total de R$${valorFinalCO.toFixed(2)} Tendo um lucro bruto de <span id="pBom">R$${(valorFinalCO - substrato).toFixed(2)}<span/>.`;
+        if (((valorFinalCO - substrato).toFixed(2)) < 0 ) divMensagem.innerHTML += `<br><b style="background-color: red; color: white">Aumente o valor práticado, você está com perdas e não lucros.</b>`;
     }else {
       if (tipo == "Champingon") {
         valorFinal = champingon*valor;
         valorFinalCO = champingonCO*valor;
         divMensagem.innerHTML = `Com o investimento inicial de R$${substrato.toFixed(2)}, equivalente a ${substratoChamp.toFixed(2)}Kg de substrato sua produção atual é de ${champingon.toFixed(2)}Kg dando um total de R$${valorFinal.toFixed(2)} Tendo um lucro bruto de <span id="pRuim">R$${(valorFinal - substrato).toFixed(2)}<span/>.<br>`;
         divMensagem.innerHTML += `Com a <b>MushRoom.co</b> fazendo o mesmo investimento sua produção passa a ser de ${champingonCO.toFixed(2)}Kg dando um total de R$${valorFinalCO.toFixed(2)} Tendo um lucro bruto de <span id="pBom">R$${(valorFinalCO - substrato).toFixed(2)}<span/>.`;
+          if (((valorFinalCO - substrato).toFixed(2)) < 0 ) divMensagem.innerHTML += `<br><b style="background-color: red; color: white">Aumente o valor práticado, você está com perdas e não lucros.</b>`;
       }else {
       if (tipo == "Shimeji") {
         valorFinal = shimeji*valor;
         valorFinalCO = shimejiCO*valor;
         divMensagem.innerHTML = `Com o investimento inicial de R$${substrato.toFixed(2)}, equivalente a ${substrato.toFixed(2)}Kg de substrato sua produção atual é de ${shimeji.toFixed(2)}Kg dando um total de R$${valorFinal.toFixed(2)} Tendo um lucro bruto de <span id="pRuim">R$${valorFinal - substrato}<span/>.<br>`;
         divMensagem.innerHTML += `Com a <b>MushRoom.co</b> fazendo o mesmo investimento sua produção passa a ser de ${shimejiCO.toFixed(2)}Kg dando um total de R$${valorFinalCO.toFixed(2)} Tendo um lucro bruto de <span id="pBom">R$${valorFinalCO - substrato}<span/>.`;
+          if (((valorFinalCO - substrato).toFixed(2)) < 0 ) divMensagem.innerHTML += `<br><b style="background-color: red; color: white">Aumente o valor práticado, você está com perdas e não lucros.</b>`;
       }
     }
     }
-  }
+    }
 </script>
 </html>
