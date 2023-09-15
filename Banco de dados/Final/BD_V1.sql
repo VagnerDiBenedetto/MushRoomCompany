@@ -37,21 +37,19 @@ nomeSensor varchar(30) not null
 create table registros(
 idRegistro int primary key auto_increment,
 dataHora datetime default current_timestamp, 
-idSensor int, -- Chave estrangeira
-idCogumelo int, -- Chave estrangeira
 dadoSensorTemp int not null,
 dadoSensorUmi int not null
 );
 
-insert into registros(idSensor,dadoSensorTemp, dadoSensorUmi) VALUES
-	( 1, 20, 36),
-    ( 2, 12, 34),
-    ( 3, 70, 30);
+insert into registros(dadoSensorTemp, dadoSensorUmi) VALUES
+	(20, 36),
+    (12, 34),
+    (70, 30);
 
 insert into sensor(statSensor,nomeSensor) VALUES
-	( 0, 'Sensor1'),
-    ( 1, 'Sensor2'),
-    ( 1, 'Sensor3');
+	(false, 'Sensor1'),
+    (true, 'Sensor2'),
+    (true, 'Sensor3');
     
 insert into cogumelo(nomeEspecie,tempMax,tempMin,umiMax,umiMin) VALUES
     ('Shimeji','30','25','90','80'),
