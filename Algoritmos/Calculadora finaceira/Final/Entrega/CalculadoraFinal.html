@@ -16,7 +16,10 @@
     <br>
     <spam class="perguntas">Valor praticado por Kg:</spam> <input type="text" id="ipt_valor"><br>
     <br>
-    <p>Investimento / </p>
+    <p>
+      Com sua entrada de investimento calcularemos quantos quilos de blocos de substrato você conseguirá comprar<br> 
+      e quanto isso te trará de rendimento caso você contrate a <b>Mushroom.co</b>.
+    </p>
     <br>
     <button onclick="calcular()">Calcular</button>
     <br>
@@ -49,6 +52,32 @@
     //Quantidade de Champingon produzida com a MushRoom.co
     var champingonCO = champingon * 1.57
 
+    // // Verificando valores 
+
+    // if (produçãoInicial < 0) {
+
+    //   divMensagem.innerHTML = "<h2>A produção atual não pode ser negativa!</h2>";
+    // }else {
+    //   if (valorKg < 0) {
+    //     divMensagem.innerHTML = "<h2>O valor  por Kg não pode ser negativo!</h2>";
+    //   }else{
+    //     if (gastos > valorInicial) {
+
+    //       divMensagem.innerHTML += "<b>Voce está tendo prejuizo atualmente!</b>";
+
+    //       if (gastos < valorFinal) {
+
+    //         divMensagem.innerHTML += "<br><b>A implantação do sistema te ajudará a contornar esse prejuizo!</b>";
+
+    //       }else {
+
+    //         divMensagem.innerHTML += "<br><b>Infelizmente a sua produção não dará lucro!</b>";
+            
+    //       }
+    //     }
+    //   }
+    // }
+
     if(tipo == "Shiitake"){
       valorFinal = shiitake*valor;
       valorFinalCO = shiitakeCO*valor;
@@ -69,37 +98,6 @@
       }
     }
     }
-    
-    // // Verificando valores 
-
-    // if (produçãoInicial < 0) {
-
-    //   divMensagem.innerHTML = "<h2>A produção atual não pode ser negativa!</h2>";
-    //   tableDados.innerHTML ='';
-
-    // }else {
-    //   if (valorKg < 0) {
-
-    //     divMensagem.innerHTML = "<h2>O valor  por Kg não pode ser negativo!</h2>";
-    //     tableDados.innerHTML ='';
-
-    //   }else{
-    //     if (gastos > valorInicial) {
-
-    //       divMensagem.innerHTML += "<b>Voce está tendo prejuizo atualmente!</b>";
-
-    //       if (gastos < valorFinal) {
-
-    //         divMensagem.innerHTML += "<br><b>A implantação do sistema te ajudará a contornar esse prejuizo!</b>";
-
-    //       }else {
-
-    //         divMensagem.innerHTML += "<br><b>Infelizmente a sua produção não dará lucro!</b>";
-            
-    //       }
-    //     }
-    //   }
-    // }
   }
 </script>
 </html>
